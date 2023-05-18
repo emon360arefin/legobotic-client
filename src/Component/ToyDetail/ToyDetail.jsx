@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ToyDetailCard from './ToyDetailCard';
 
 const ToyDetail = () => {
     const { id } = useParams();
@@ -16,10 +17,11 @@ const ToyDetail = () => {
     console.log(toy.picture);
 
     return (
-        <div className='bg-[#FFFAFA] py-16 ' >
+        <div className='bg-[#FFFAFA] py-8 md:py-16 ' >
             <div className='max-w-7xl mx-auto px-2'>
+                <h2 className='text-4xl text-[#E71C30] font-semibold text-center'>Toy Details</h2>
                 {
-                    toy.map(to => <img key={to.id} src={to.picture}></img> )
+                    toy.map(to => <ToyDetailCard key={to.id} toy={to}></ToyDetailCard> )
                 }
             </div>
         </div>
