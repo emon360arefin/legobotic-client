@@ -1,12 +1,14 @@
 import React from 'react';
 import HeroSection from './HeroSection';
 import SecondSection from './SecondSection';
+import SectionOne from './SectionOne/SectionOne';
 
 const Home = () => {
     return (
         <div>
             <HeroSection></HeroSection>
-            <SecondSection>s</SecondSection>
+            <SectionOne></SectionOne>
+            <SecondSection></SecondSection>
         </div>
     );
 };

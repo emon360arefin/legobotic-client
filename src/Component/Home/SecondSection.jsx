@@ -22,8 +22,10 @@ const SecondSection = () => {
     console.log(boats);
 
     return (
-        <div className='bg-white py-16'>
+        <div className='bg-[#FFFAFA] py-16'>
             <div className='max-w-7xl mx-auto px-2 '>
+                <h2 className={`text-3xl text-center md:text-4xl font-bold text-[#D7352E] leading-normal `}>Explore Our Products.</h2>
+                <h2 className='text-lg md:text-xl text-center text-slate-600 my-8 md:my-10 leading-normal'>Discover a wide range of innovative and educational robotic products at LegoBotic Shop. Explore our collection of interactive kits, building blocks, and robotics components designed to inspire creativity and enhance STEM learning. From beginners to advanced enthusiasts, find the perfect tools to build, program, and bring your robotic creations to life. Start your robotic journey with LegoBotic today!</h2>
                 <Tabs>
                     <TabList className={"flex justify-center border-b"}>
                         <Tab >Car</Tab>
