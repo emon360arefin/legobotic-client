@@ -61,7 +61,7 @@ const Header = () => {
                             <img onMouseOut={() => setHover(false)} onMouseEnter={() => setHover(true)} className='w-10 rounded-full absolute top-0 bottom-0' src={user.photoURL} alt="" />
                         </div>
 
-                        <Link onClick={handleLogOut} className='py-1 md:px-8 px-4 h-8 border bg-gradient-to-r from-[#EA1E34] to-[#EB1555] text-white rounded'>Log Out</Link>
+                        <Link onClick={handleLogOut} className='py-1 md:px-8 px-4 h-8 border bg-gradient-to-r from-[#EA1E34] to-[#D21115] text-white rounded'>Log Out</Link>
                     </div>
                 }
 
