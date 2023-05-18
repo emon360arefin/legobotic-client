@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../Authentication/AuthProvider';
 
 const ToyCardPlane = (props) => {
     const { toyName, toyId, subCategory, rating, quantity, price, picture, description, _id } = props.plane;
+
+    const notify = () => toast("Wow so easy!");
+
+    const { user } = useContext(AuthContext)
     return (
         <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-4 md:mt-8 relative'>
+
             <img src={picture} alt="" />
             <div className='p-4 flex flex-col gap-2 mb-12'>
                 <h2 className='text-xl font-bold text-slate-600'>{toyName}</h2>
@@ -20,9 +28,13 @@ const ToyCardPlane = (props) => {
                 </div>
                 <h2>{description}</h2>
             </div>
-            <Link to={`/toy/${_id}`} className='py-2 bg-[#f01e25] hover:bg-[#d20209] transition-all ease-in-out duration-300 absolute text-white bottom-0 w-full text-center '>
+            <Link onClick={notify} to={`/toy/${_id}`} className='py-2 bg-[#f01e25] hover:bg-[#d20209] transition-all ease-in-out duration-300 absolute text-white bottom-0 w-full text-center '>
                 <button>View Details</button>
             </Link>
+
+            {
+                !user && <ToastContainer />
+            }
         </div>
     );
 };

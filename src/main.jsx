@@ -13,6 +13,8 @@ import Blog from './Component/Blog/Blog';
 import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
 import AuthProvider from './Component/Authentication/AuthProvider';
+import ToyDetail from './Component/ToyDetail/ToyDetail';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'toy/:id',
+                element: <PrivateRoute><ToyDetail></ToyDetail></PrivateRoute>
             }
         ]
     }
