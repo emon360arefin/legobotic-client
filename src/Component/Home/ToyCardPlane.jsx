@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ToyCardBoat = (props) => {
-
-    const { toyName, toyId, subCategory, rating, quantity, price, picture, description, _id } = props.boat;
-
+const ToyCardPlane = (props) => {
+    const { toyName, toyId, subCategory, rating, quantity, price, picture, description, _id } = props.plane;
     return (
         <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-4 md:mt-8 relative'>
             <img src={picture} alt="" />
@@ -29,4 +27,4 @@ const ToyCardBoat = (props) => {
     );
 };
 
-export default ToyCardBoat;
+export default ToyCardPlane;

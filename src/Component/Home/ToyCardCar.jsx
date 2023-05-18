@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const ToyCardCar = (props) => {
 
-    const { toyName, toyId, subCategory, rating, quantity, price, picture, description } = props.car;
+    const { toyName, toyId, subCategory, rating, quantity, price, picture, description, _id } = props.car;
     return (
-        <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-8 relative'>
+        <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-4 md:mt-8 relative'>
             <img src={picture} alt="" />
             <div className='p-4 flex flex-col gap-2 mb-12'>
                 <h2 className='text-xl font-bold text-slate-600'>{toyName}</h2>
@@ -16,12 +16,12 @@ const ToyCardCar = (props) => {
 
                 <div className='flex justify-between'>
                     <h2><span className='font-semibold'>In Stock:</span> {quantity}</h2>
-                    <h2 className='border px-3 py-1'>{subCategory}</h2>
+                    <h2 className='border bg-red-100 px-3 py-px'>{subCategory}</h2>
 
                 </div>
                 <h2>{description}</h2>
             </div>
-            <Link className='py-2 bg-[#f01e25] absolute text-white bottom-0 w-full text-center '>
+            <Link to={`/toy/${_id}`} className='py-2 bg-[#f01e25] hover:bg-[#d20209] transition-all ease-in-out duration-300 absolute text-white bottom-0 w-full text-center '>
                 <button>View Details</button>
             </Link>
         </div>

@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ToyCardBoat from './ToyCardBoat';
 import ToyCardCar from './ToyCardCar';
+import ToyCardPlane from './ToyCardPlane';
 
 const SecondSection = () => {
 
@@ -24,14 +25,14 @@ const SecondSection = () => {
         <div className='bg-white py-16'>
             <div className='max-w-7xl mx-auto px-2 '>
                 <Tabs>
-                    <TabList >
-                        <Tab>Car</Tab>
+                    <TabList className={"flex justify-center border-b"}>
+                        <Tab >Car</Tab>
                         <Tab >Boat</Tab>
                         <Tab>Plane</Tab>
                     </TabList>
 
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8'>
                             {
                                 cars.map(car => <ToyCardCar
                                     key={car._id}
@@ -41,7 +42,7 @@ const SecondSection = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8'>
                             {
                                 boats.map(boat => <ToyCardBoat
                                     key={boat._id}
@@ -51,7 +52,14 @@ const SecondSection = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 4</h2>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8'>
+                            {
+                                planes.map(plane => <ToyCardPlane
+                                    key={plane._id}
+                                    plane={plane}
+                                ></ToyCardPlane>)
+                            }
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>
