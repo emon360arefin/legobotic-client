@@ -15,7 +15,7 @@ const SectionOne = () => {
     const images = [];
     toys.map(toy => images.push(toy.picture))
     return (
-        <div className='py-16'>
+        <div className='pt-12 md:pt-20 pb-16 md:pb-24'>
             <div className=''>
                 <div className='max-w-7xl mx-auto px-2'>
                     <h2 className={`text-3xl text-center md:text-4xl font-bold text-[#D7352E] leading-normal `}>Products Gallery.</h2>

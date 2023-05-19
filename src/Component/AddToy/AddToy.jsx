@@ -11,11 +11,11 @@ const AddToy = () => {
 
         const form = event.target;
 
-        const toyurl = form.toyurl.value;
-        const toyname = form.toyname.value;
+        const picture = form.toyurl.value;
+        const toyName = form.toyname.value;
         let sellername = form.sellername.value;
         let selleremail = form.selleremail.value;
-        const subcategory = form.subcategory.value;
+        const subCategory = form.subcategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
@@ -29,11 +29,11 @@ const AddToy = () => {
             selleremail = user.email;
         }
 
-        const toyForm = { toyurl, toyname, sellername, selleremail, subcategory, price, rating, quantity, description };
+        const toyForm = { picture, toyName, subCategory, price, rating, quantity, description };
 
         console.log(toyForm);
 
-        fetch('https://toy-server.vercel.app/sellertoys', {
+        fetch('http://localhost:5000/toys', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -46,7 +46,7 @@ const AddToy = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Added Successfully',
+                        text: 'Toy Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -99,9 +99,9 @@ const AddToy = () => {
                                     <span className="label-text">Toy's Sub Category</span>
                                 </label>
                                 <select name="subcategory" className="input input-bordered">
-                                    <option value="option1">Car</option>
-                                    <option value="option2">Boat</option>
-                                    <option value="option3">Plane</option>
+                                    <option value="Car">Car</option>
+                                    <option value="Boat">Boat</option>
+                                    <option value="Plane">Plane</option>
                                 </select>
                             </div>
                             <div className="form-control w-full">

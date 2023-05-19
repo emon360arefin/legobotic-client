@@ -13,7 +13,9 @@ const ToyCardPlane = (props) => {
     return (
         <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-4 md:mt-8 relative'>
 
-            <img src={picture} alt="" />
+            <div className='overflow-hidden h-60 '>
+                <img src={picture} alt="" />
+            </div>
             <div className='p-4 flex flex-col gap-2 mb-12'>
                 <h2 className='text-xl font-bold text-slate-600'>{toyName}</h2>
                 <div className='flex justify-between'>
