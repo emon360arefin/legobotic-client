@@ -29,7 +29,7 @@ const AddToy = () => {
             selleremail = user.email;
         }
 
-        const toyForm = { picture, toyName, subCategory, price, rating, quantity, description };
+        const toyForm = { picture, toyName, sellername, selleremail, subCategory, price, rating, quantity, description };
 
         console.log(toyForm);
 

@@ -43,7 +43,7 @@ const Header = () => {
                         <Bars3Icon className="h-6 w-6 text-[#D01012]" /> :
                         <XMarkIcon className="h-6 w-6 text-[#D01012] " />}</span>
                 </div>
-                <div className={`absolute md:static md:-ml-20 bg-[#fffafa] -ml-4 p-4 md:p-0 md:bg-transparent flex w-full md:w-auto justify-end transition-all ease-in-out duration-300 md:top-16 z-10 md:z-20 ${!open ? 'top-16' : '-top-52'}`}>
+                <div className={`absolute md:static md:-ml-20 bg-[#fffafa] -ml-4 p-4 md:p-0 md:bg-transparent flex w-full md:w-auto justify-end transition-all ease-in-out duration-300 md:top-16 z-10 md:z-20 ${!open ? 'top-16' : '-top-60'}`}>
 
                     <ul className='flex md:flex-row flex-col items-end gap-4 md:gap-6 w-full md:w-auto'>
                         {
