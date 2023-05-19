@@ -9,7 +9,7 @@ const Header = () => {
 
     const activeClassList = 'text-[#D01012] text-lg bg-red-100 px-4 py-px rounded w-full md:w-auto';
 
-    const inactiveClassList = 'text-slate-700 hover:text-[#EB1750] transition-all ease-in-out duration-300 text-lg px-4 py-px rounded w-full md:w-auto ';
+    const inactiveClassList = 'text-slate-700 hover:text-[#EB1750] hover:bg-red-100 transition-all ease-in-out duration-300 text-lg px-4 py-px rounded w-full md:w-auto ';
 
     let items = [
         { "id": 1, "name": "Home", "path": "/" },
@@ -21,7 +21,7 @@ const Header = () => {
         { "id": 4, "name": "Add A Toy", "path": "/add" },
     ]
 
-    { user ? items = items.concat([...additional]) : null ; }
+    { user ? items = items.concat([...additional]) : null; }
 
     const [open, setOpen] = useState(true);
     const [hover, setHover] = useState(false);

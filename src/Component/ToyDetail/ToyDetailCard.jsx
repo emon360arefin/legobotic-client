@@ -18,7 +18,9 @@ const ToyDetailCard = (props) => {
                         <h2 className='border font-bold text-xl bg-red-100 px-3 py-px'>{subCategory}</h2>
 
                     </div>
-                    <h2 className='text-lg p-4 rounded bg-white'>{description}</h2>
+                    <div className='p-4 border border-slate-200 rounded bg-white overflow-auto'>
+                        <h2 className='text-lg '>{description}</h2>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,7 +6,18 @@ const ToyDetail = () => {
     const { id } = useParams();
 
     const [toys, setToys] = useState([]);
+    const [singleToy, setSingleToy] = useState(null);
 
+    useEffect(() => {
+        fetch(`https://toy-server.vercel.app/toy/${id}`)
+        .then(res => res.json())
+        .then(data => setSingleToy(data))
+    },[]);
+
+    console.log("single");
+    console.log(singleToy);
+    console.log("toy");
+    
     useEffect(() => {
         fetch(`https://toy-server.vercel.app/toys`)
             .then(res => res.json())
@@ -14,7 +25,7 @@ const ToyDetail = () => {
     }, [])
 
     const toy = toys.filter(to => to._id == id)
-    console.log(toy.picture);
+    // console.log(toy.picture);
 
     return (
         <div className='bg-[#FFFAFA] py-8 md:py-16 ' >
