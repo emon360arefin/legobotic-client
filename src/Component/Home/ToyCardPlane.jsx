@@ -7,11 +7,11 @@ import { AuthContext } from '../Authentication/AuthProvider';
 const ToyCardPlane = (props) => {
     const { toyName, toyId, subCategory, rating, quantity, price, picture, description, _id } = props.plane;
 
-    const notify = () => toast("Wow so easy!");
+    const notify = () => toast("To View Detail First Login");
 
     const { user } = useContext(AuthContext)
     return (
-        <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-4 md:mt-8 relative'>
+        <div className='bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mt-4 md:mt-0 relative'>
 
             <div className='overflow-hidden h-60 '>
                 <img src={picture} alt="" />

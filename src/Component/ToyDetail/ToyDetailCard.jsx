@@ -7,8 +7,8 @@ const ToyDetailCard = (props) => {
         <div className='py-16'>
             <div className='shadow rounded-xl overflow-hidden flex flex-col md:flex-row'>
                 <img className='w-full md:w-1/2' src={picture} alt="" />
-                <div className='p-6 flex flex-col gap-4'>
-                    <h2 className='text-4xl font-bold text-slate-600'>{toyName}</h2>
+                <div className='p-6 flex flex-col gap-4 w-full'>
+                    <h2 className='text-2xl md:text-3xl font-bold text-slate-600'>{toyName}</h2>
                     <div className='flex justify-between'>
                         <h2 className='text-xl'> <span className='font-bold '>Price:</span> ${price}</h2>
                         <h2 className='text-xl'> <span className='font-bold'>Rating:</span> {rating}</h2>

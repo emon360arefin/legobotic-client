@@ -7,12 +7,12 @@ import { AuthContext } from '../Authentication/AuthProvider';
 const Login = () => {
 
     const { signInUser, googleSignIn } = useContext(AuthContext);
-    const navigate = useNavigate()
 
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
 
-    const location = useLocation()
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const from = location.state?.from?.pathname || "/"
 
@@ -28,7 +28,7 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 event.target.reset()
-                navigate(from, { replace: true })
+                navigate(from, {replace: true})
 
             })
             .catch(error => {
