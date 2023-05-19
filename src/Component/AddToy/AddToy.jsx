@@ -96,14 +96,14 @@ const AddToy = () => {
                                     <label className="label">
                                         <span className="label-text">Seller Email</span>
                                     </label>
-                                    <input type="email" name='selleremail' placeholder={user && user.email} className="input input-bordered" />
+                                    <input type="email" name='selleremail' value={user && user.email} placeholder={user && user.email} className="input input-bordered" />
                                 </div>
                             </div>
 
                             <div className='flex flex-col md:flex-row justify-between gap-6'>
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text">Toy's Sub Category</span>
+                                        <span className="label-text">Toy Sub Category</span>
                                     </label>
                                     <select name="subcategory" className="input input-bordered">
                                         <option value="Car">Car</option>
@@ -128,7 +128,7 @@ const AddToy = () => {
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text">Available quantity</span>
+                                        <span className="label-text">Available Quantity</span>
                                     </label>
                                     <input type="text" name='quantity' placeholder="Enter Available quantity" className="input input-bordered" required />
                                 </div>

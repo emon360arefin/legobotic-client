@@ -17,6 +17,7 @@ import ToyDetail from './Component/ToyDetail/ToyDetail';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import AddToy from './Component/AddToy/AddToy';
 import AllToys from './Component/AllToys/AllToys';
+import MyToys from './Component/MyToys/MyToys';
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
                 path: 'all',
                 element: <AllToys></AllToys>,
                 loader: () => fetch('https://toy-server.vercel.app/toys')
+            },
+            {
+                path: 'my',
+                element: <MyToys></MyToys>
             }
         ]
     }
