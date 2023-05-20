@@ -60,8 +60,10 @@ const router = createBrowserRouter([
             {
                 path: 'my',
                 element: <MyToys></MyToys>
+                // loader: ({ params }) => fetch(`https://toy-server.vercel.app/toys/${params.user?.email}`) 
             }
         ]
+
     }
 ]);
 

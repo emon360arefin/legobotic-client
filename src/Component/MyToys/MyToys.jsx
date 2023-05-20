@@ -1,22 +1,30 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
 import MyToyCard from './MyToyCard';
+// import { useLoaderData } from 'react-router-dom';
 
 const MyToys = () => {
 
     const { user } = useContext(AuthContext);
+    // const loadedToys = useLoaderData()
 
+    const [loadedToys, setLoadedToys] = useState([])
     const [myToys, setMyToys] = useState([]);
 
     useEffect(() => {
         fetch(`https://toy-server.vercel.app/toys/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setMyToys(data);
+                setLoadedToys(data);
             })
     }, [user]);
 
+    useEffect(() => {
+        setMyToys(loadedToys);
+    }, [loadedToys]);
+
     console.log(myToys);
+
 
     return (
         <div className='bg-white py-6 md:py-16'>
@@ -33,7 +41,7 @@ const MyToys = () => {
                     <thead>
                         <tr>
 
-                            {/* <th className='w-0'></th> */}
+                            <th className='w-0'></th>
                             <th className='w-2/12 text-base'>Toy Image</th>
                             <th className='w-2/12 text-base'>Toy</th>
                             <th className='w-2/12 text-base'>Price (Quantity)</th>
@@ -43,7 +51,7 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.map(my => <MyToyCard key={my._id} my={my} ></MyToyCard>)
+                            myToys.map(my => <MyToyCard key={my._id} my={my} myToys={myToys} setMyToys={setMyToys} ></MyToyCard>)
                         }
                     </tbody>
                 </table>
