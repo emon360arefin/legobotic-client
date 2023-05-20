@@ -54,7 +54,7 @@ const UpdateMyToy = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
-                navigate('/my', {replace: true})
+                navigate('/my', { replace: true })
 
             })
     }
@@ -71,19 +71,21 @@ const UpdateMyToy = () => {
                     <h2 className='text-lg md:text-xl text-center text-slate-600 my-4 md:my-4 leading-normal'>"Update Your Product: Enhance, modify, and refine existing offerings to meet changing market demands and customer preferences."</h2>
                 </div>
 
-                <div className='flex flex-col-reverse justify-center md:flex-row gap-8 mt-12 '>
-                    <div className='w-full md:w-3/5 pr-0 md:pr-20'>
-                        <form onSubmit={handleUpdateForm} className="p-6 shadow rounded-xl flex flex-col gap-4">
+                <div className='flex flex-col-reverse justify-center md:flex-row gap-20 mt-12 '>
+                    <div className='w-full md:w-6/12 '>
+                        <form onSubmit={handleUpdateForm} className="p-6 shadow rounded-xl flex flex-col gap-2">
 
 
 
-                            <div className='flex gap-6'>
+                            <div className=''>
 
-                                <img className='rounded-lg w-1/2' src={toy.picture} alt="" />
+                                <div className='overflow-hidden h-72 rounded-lg'>
+                                    <img className='rounded-lg' src={toy.picture} alt="" />
+                                </div>
 
-                                <div className='w-1/2'>
-                                    <h2 className='text-xl md:text-3xl font-semibold text-slate-600 whitespace-normal mb-4'>{toy.toyName}</h2>
-                                    <h2 className='px-4 py-1 border text-slate-600 bg-red-100 rounded border-slate-400 inline '>{toy.subCategory}</h2>
+                                <div className='flex justify-between mt-4 py-2 px-4 bg-slate-50 rounded-lg border-2 border-slate-200'>
+                                    <h2 className='text-xl md:text-2xl font-semibold text-slate-600 whitespace-normal'>{toy.toyName}</h2>
+                                    <h2 className='px-4 py-1 h-8 border text-slate-600 bg-red-100 rounded border-slate-400 inline '>{toy.subCategory}</h2>
                                 </div>
                             </div>
 
@@ -110,7 +112,7 @@ const UpdateMyToy = () => {
                                 <label className="label">
                                     <span className="label-text">Description</span>
                                 </label>
-                                <textarea name='description' placeholder="Enter Description" className="rounded-lg h-32 border-slate-300 input-bordered" required />
+                                <textarea name='description' placeholder="Enter Description" className="rounded-lg h-24 border-slate-300 input-bordered" required />
                             </div>
 
 
@@ -123,6 +125,9 @@ const UpdateMyToy = () => {
                         </form>
                     </div>
 
+                    <div className='w-full md:w-6/12 -mb-24 md:mb-0'>
+                        <img src="/update.jpg" alt="" />
+                    </div>
 
                 </div>
             </div>
