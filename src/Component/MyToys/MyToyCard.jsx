@@ -27,10 +27,16 @@ const MyToyCard = (props) => {
             </td>
 
             <td>
-                <div className='p-2 overflow-auto  rounded bg-slate-50 w-full h-32'>
+                <div className='py-2 px-4 overflow-auto  rounded-lg bg-slate-50 w-full h-32'>
                     <h2 className='text-base text-slate-700 mb-2 whitespace-normal'>{description}</h2>
                 </div>
 
+            </td>
+
+            <td>
+                <Link to={`/toy/${_id}`}>
+                    <button className='px-6 py-1 rounded text-white bg-[#D31217] '>View Details</button>
+                </Link>
             </td>
 
         </tr>

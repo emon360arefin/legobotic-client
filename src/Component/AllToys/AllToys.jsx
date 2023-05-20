@@ -49,15 +49,16 @@ const AllToys = () => {
                 <div className='flex flex-col-reverse md:flex-row gap-8 mt-4 '>
                     <div className=' w-full'>
                         <div className="overflow-x-auto shadow rounded-lg">
-                            <table className="table w-full">
+                            <table className="table w-full ">
                                 {/* head */}
-                                <thead>
-                                    <tr>
+                                <thead className=''>
+                                    <tr className=''>
 
                                         <th className='w-0'></th>
-                                        <th className='w-3/12 text-base'>Seller Name</th>
-                                        <th className='w-4/12 text-base'>Toy Name (Sub Category)</th>
-                                        <th className='w-3/12 text-base'>Price (Quantity)</th>
+                                        <th className='w-2/12 text-base'>Seller Name</th>
+                                        <th className='w-3/12 text-base'>Toy Image</th>
+                                        <th className='w-3/12 text-base'>Toy Name (Sub Category)</th>
+                                        <th className='w-2/12 text-base'>Price (Quantity)</th>
                                         <th className='w-2/12 text-base'>Toy Details</th>
                                     </tr>
                                 </thead>
