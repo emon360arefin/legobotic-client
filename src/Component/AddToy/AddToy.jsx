@@ -50,8 +50,12 @@ const AddToy = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+
                 }
+                event.target.reset();
+
             })
+
     }
 
 

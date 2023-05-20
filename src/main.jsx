@@ -18,6 +18,7 @@ import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import AddToy from './Component/AddToy/AddToy';
 import AllToys from './Component/AllToys/AllToys';
 import MyToys from './Component/MyToys/MyToys';
+import UpdateMyToy from './Component/MyToys/UpdateMyToy';
 
 const router = createBrowserRouter([
     {
@@ -60,7 +61,10 @@ const router = createBrowserRouter([
             {
                 path: 'my',
                 element: <MyToys></MyToys>
-                // loader: ({ params }) => fetch(`https://toy-server.vercel.app/toys/${params.user?.email}`) 
+            },
+            {
+                path: 'update/:id',
+                element: <UpdateMyToy></UpdateMyToy>
             }
         ]
 

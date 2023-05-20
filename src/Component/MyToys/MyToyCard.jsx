@@ -39,7 +39,7 @@ const MyToyCard = (props) => {
                                 'success'
                             )
 
-                            
+
                             const rest = myToys.filter(toy => toy._id !== _id)
                             setMyToys(rest)
                         }
@@ -82,7 +82,9 @@ const MyToyCard = (props) => {
                     <button className='px-6 py-1 rounded w-full text-white bg-[#D31217] '>View Details</button>
                 </Link>
                 <div className='flex justify-between mt-8'>
-                    <button> <BiEdit className='text-3xl text-slate-600' title='Update Item' /> </button>
+                    <Link to={`/update/${_id}`}>
+                        <button> <BiEdit className='text-3xl text-slate-600' title='Update Item' /> </button>
+                    </Link>
 
                     <Link onClick={() => handleDelete(_id)}>
                         <button> <RiDeleteBin5Fill className='text-3xl text-slate-600' title='Delete Item' /> </button>
