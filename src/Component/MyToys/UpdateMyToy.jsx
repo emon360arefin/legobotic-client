@@ -1,5 +1,5 @@
 import React, { useContext, useDebugValue, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 import { AiOutlineArrowUp } from "react-icons/ai";
@@ -7,6 +7,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 const UpdateMyToy = () => {
 
     const { id } = useParams();
+    const navigate = useNavigate()
 
     const [toy, setToy] = useState([])
 
@@ -16,7 +17,7 @@ const UpdateMyToy = () => {
             .then(data => setToy(data))
     }, [id])
 
-    console.log(toy);
+    console.log(toy, 'And', id,);
 
     const { user } = useContext(AuthContext);
 
@@ -35,7 +36,7 @@ const UpdateMyToy = () => {
 
         console.log(UpdatedToy);
 
-        fetch('https://toy-server.vercel.app/toys', {
+        fetch(`https://toy-server.vercel.app/update/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -45,7 +46,7 @@ const UpdateMyToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Toy Updated Successfully',
@@ -53,6 +54,8 @@ const UpdateMyToy = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
+                navigate('/my', {replace: true})
+
             })
     }
 
@@ -78,8 +81,8 @@ const UpdateMyToy = () => {
 
                                 <img className='rounded-lg w-1/2' src={toy.picture} alt="" />
 
-                                <div className='w-1/2 overflow-hidden'>
-                                    <h2 className='text-3xl font-semibold text-slate-600 whitespace-normal mb-4'>{toy.toyName}</h2>
+                                <div className='w-1/2'>
+                                    <h2 className='text-xl md:text-3xl font-semibold text-slate-600 whitespace-normal mb-4'>{toy.toyName}</h2>
                                     <h2 className='px-4 py-1 border text-slate-600 bg-red-100 rounded border-slate-400 inline '>{toy.subCategory}</h2>
                                 </div>
                             </div>
@@ -120,7 +123,7 @@ const UpdateMyToy = () => {
                         </form>
                     </div>
 
-                   
+
                 </div>
             </div>
 
