@@ -36,25 +36,27 @@ const MyToys = () => {
                 </div>
 
 
-                <table className="table w-full mt-8">
-                    {/* head */}
-                    <thead>
-                        <tr>
+                <div className='overflow-x-auto shadow rounded-lg mt-8'>
+                    <table className="table w-full ">
+                        {/* head */}
+                        <thead>
+                            <tr>
 
-                            <th className='w-0'></th>
-                            <th className='w-2/12 text-base'>Toy Image</th>
-                            <th className='w-2/12 text-base'>Toy</th>
-                            <th className='w-2/12 text-base'>Price (Quantity)</th>
-                            <th className='w-4/12 text-base'>Description</th>
-                            <th className='w-2/12 text-base'>Toy Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            myToys.map(my => <MyToyCard key={my._id} my={my} myToys={myToys} setMyToys={setMyToys} ></MyToyCard>)
-                        }
-                    </tbody>
-                </table>
+                                <th className='w-0'></th>
+                                <th className='w-2/12 text-base'>Toy Image</th>
+                                <th className='w-2/12 text-base'>Toy</th>
+                                <th className='w-2/12 text-base'>Price (Quantity)</th>
+                                <th className='w-4/12 text-base'>Description</th>
+                                <th className='w-2/12 text-base'>Toy Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                myToys.map(my => <MyToyCard key={my._id} my={my} myToys={myToys} setMyToys={setMyToys} ></MyToyCard>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
