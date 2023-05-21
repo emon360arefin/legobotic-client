@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate()
 
     const handleAddForm = (event) => {
         event.preventDefault();
@@ -53,6 +55,7 @@ const AddToy = () => {
 
                 }
                 event.target.reset();
+                
 
             })
 
