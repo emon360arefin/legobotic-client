@@ -65,8 +65,8 @@ const MyToys = () => {
                         onChange={handleSortOrderChange}
                         className='border border-gray-300 rounded px-2 py-1'
                     >
-                        <option className='h-8' value='asc'>Price Low > High</option>
-                        <option value='desc'>Price High > Low</option>
+                        <option className='h-8' value='asc'>Price Low to High</option>
+                        <option value='desc'>Price High to Low</option>
                     </select>
                 </div>
 
