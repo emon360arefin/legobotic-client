@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { AuthContext } from '../Authentication/AuthProvider';
 
 
 const ToyDetail = () => {
+
+    const { user } = useContext(AuthContext)
     const { id } = useParams();
     const [singleToy, setSingleToy] = useState({});
 
     useEffect(() => {
-        fetch(`https://toy-server.vercel.app/toy/${id}`)
-            .then(res => res.json())
-            .then(data => setSingleToy(data))
-    }, []);
+        if (user) {
+            fetch(`https://toy-server.vercel.app/toy/${id}`)
+                .then(res => res.json())
+                .then(data => setSingleToy(data))
+        }
+    }, [user, id]);
 
     console.log("single");
     console.log(singleToy);
