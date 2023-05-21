@@ -6,5 +6,9 @@ Website Overview:
 
 3. Header and footer is available for all the pages except the 404 page.
 
-4. The website is developed using both frontend and backend technology such as: 
-        a. VITE  b.
+4. MongoDB CRUD operation is running on Add A Toy, My Toys page.
+
+5. The website is developed using both frontend and backend technology such as: 
+        a. VITE  b. Node c. Express d. Tailwind e. Mongodb
+
+LIVE SITE LINK: https://silver-stroopwafel-4a0ee3.netlify.app/
