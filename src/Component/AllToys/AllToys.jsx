@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToyRow from './AllToyRow';
 
 const AllToys = () => {
 
-    const allToys = useLoaderData();
+    // const allToys = useLoaderData();
 
-    const userToys = allToys.filter(toy => toy.selleremail)
+    const [allToys, setAllToys] = useState([])
+    useEffect(() => {
+        fetch(`https://toy-server.vercel.app/limittoys`)
+            .then(res => res.json())
+            .then(data => {
+                setAllToys(data);
+                setFilteredToys(data)
+            })
+    }, [])
 
-    console.log(userToys);
+    // const userToys = allToys.filter(toy => toy.selleremail)
+
+    // console.log(userToys);
 
 
     // Search Box
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredToys, setFilteredToys] = useState(userToys);
+    const [filteredToys, setFilteredToys] = useState(allToys);
 
     const handleSearch = (event) => {
         const query = event.target.value;
         setSearchQuery(query);
 
-        const filtered = userToys.filter((toy) =>
+        const filtered = allToys.filter((toy) =>
             toy.toyName.toLowerCase().includes(query.toLowerCase())
         );
-        setFilteredToys(filtered.slice(0, 20));
+        setFilteredToys(filtered);
     };
-
 
     return (
         <div className='py-8 md:py-16 bg-white'>
