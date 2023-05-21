@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
 import MyToyCard from './MyToyCard';
+import useTitle from '../Hooks/useTitle';
 // import { useLoaderData } from 'react-router-dom';
 
 const MyToys = () => {
+
+    useTitle("My Toys")
 
     const { user } = useContext(AuthContext);
     // const loadedToys = useLoaderData()

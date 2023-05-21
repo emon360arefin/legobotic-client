@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
+import useTitle from '../Hooks/useTitle';
 
 
 const ToyDetail = () => {
+
+    useTitle("Toy Detail")
 
     const { user } = useContext(AuthContext)
     const { id } = useParams();

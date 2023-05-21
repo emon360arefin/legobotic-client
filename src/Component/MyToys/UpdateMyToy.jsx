@@ -1,10 +1,13 @@
-import React, { useContext, useDebugValue, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 import { AiOutlineArrowUp } from "react-icons/ai";
+import useTitle from '../Hooks/useTitle';
 
 const UpdateMyToy = () => {
+
+    useTitle("Update Toy")
 
     const { id } = useParams();
     const navigate = useNavigate()

@@ -2,9 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../Hooks/useTitle';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
+    useTitle("Add A Toy")
 
     const navigate = useNavigate()
 
