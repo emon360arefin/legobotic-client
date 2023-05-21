@@ -51,7 +51,7 @@ const ToyDetail = () => {
                                 </div>
                             }
 
-                            <div className='p-4 border border-slate-200 rounded bg-white overflow-auto'>
+                            <div className='p-4 border border-slate-200 h-auto md:h-44 rounded bg-white overflow-auto'>
                                 <h2 className='text-lg text-slate-600'>{description}</h2>
                             </div>
                         </div>
