@@ -25,6 +25,24 @@ const MyToys = () => {
 
     console.log(myToys);
 
+    // Sorting
+
+    const [sortOrder, setSortOrder] = useState('asc');
+
+        const sortedToys = myToys.sort((a, b) => {
+            if (sortOrder === 'asc') {
+                return a.price - b.price;
+            } else {
+                return b.price - a.price;
+            }
+        });
+
+    const handleSortOrderChange = (event) => {
+        setSortOrder(event.target.value);
+    };
+
+
+
 
     return (
         <div className='bg-white py-6 md:py-16'>
@@ -36,7 +54,26 @@ const MyToys = () => {
                 </div>
 
 
+                <div className='flex justify-end my-8'>
+                    <label htmlFor='sortOrder' className='mr-2 mt-1'>
+                        Sort By:
+                    </label>
+                    <select
+                        id='sortOrder'
+                        name='sortOrder'
+                        value={sortOrder}
+                        onChange={handleSortOrderChange}
+                        className='border border-gray-300 rounded px-2 py-1'
+                    >
+                        <option className='h-8' value='asc'>Price Low > High</option>
+                        <option value='desc'>Price High > Low</option>
+                    </select>
+                </div>
+
                 <div className='overflow-x-auto shadow rounded-lg mt-8'>
+
+
+
                     <table className="table w-full ">
                         {/* head */}
                         <thead>
@@ -52,7 +89,7 @@ const MyToys = () => {
                         </thead>
                         <tbody>
                             {
-                                myToys.map(my => <MyToyCard key={my._id} my={my} myToys={myToys} setMyToys={setMyToys} ></MyToyCard>)
+                                sortedToys.map(my => <MyToyCard key={my._id} my={my} myToys={myToys} setMyToys={setMyToys} ></MyToyCard>)
                             }
                         </tbody>
                     </table>
