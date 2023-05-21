@@ -23,7 +23,7 @@ const ExtraOne = () => {
     }, [sellers]);
 
     return (
-        <div className='bg-white py-8 md:py-16 z-10'>
+        <div className='bg-white py-8 md:py-16 z-10 overflow-hidden'>
             <div className='max-w-7xl mx-auto px-2'>
 
                 <div data-aos="fade-up" data-aos-duration="1500">
@@ -34,9 +34,6 @@ const ExtraOne = () => {
                 </div>
                 </div>
 
-
-
-
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                     {
                         sellers.map(seller => <ExtraOneCard key={seller._id} seller={seller}></ExtraOneCard>)
@@ -46,7 +43,7 @@ const ExtraOne = () => {
 
 
 
-                <div data-aos="fade-up" data-aos-duration="1500">
+                <div className='z-10' data-aos="fade-up" data-aos-duration="1500">
 
                     <div className='mt-12 flex justify-center'>
                         <Link to='/login' className='py-2 md:px-8 px-6 text-lg text-center  border bg-gradient-to-r from-[#EA1E34] to-[#D01012] text-white rounded'>Join The Community</Link>

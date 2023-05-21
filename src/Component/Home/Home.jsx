@@ -3,6 +3,7 @@ import HeroSection from './HeroSection';
 import SecondSection from './SecondSection';
 import SectionOne from './SectionOne/SectionOne';
 import ExtraOne from './ExtraOne/ExtraOne';
+import ExtraTwo from './ExtraTwo/ExtraTwo';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <SectionOne></SectionOne>
             <SecondSection></SecondSection>
             <ExtraOne></ExtraOne>
+            <ExtraTwo></ExtraTwo>
         </div>
     );
 };
